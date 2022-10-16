@@ -386,12 +386,17 @@ PrefabInstance:
     - target: {fileID: 789431184321666958, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
         type: 3}
       propertyPath: speed
-      value: 200
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 789431184321666958, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
         type: 3}
       propertyPath: moveSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5204532784208583087, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
+        type: 3}
+      propertyPath: m_Drag
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5204532784208583087, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
         type: 3}
