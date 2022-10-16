@@ -1,30 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputReader : MonoBehaviour, PlayerControls.IPlayerActions
+public class InputReader : MonoBehaviour
 {
-    public Vector2 MovementValue { get; private set; }
-    private PlayerControls playerInputActions;
+    private PlayerControls playerControls;
+    [SerializeField] private float speed;
+    [SerializeField] private Vector3 velocity;
 
-    public void OnMove(InputAction.CallbackContext context)
+    private void Awake()
     {
-        MovementValue = context.ReadValue<Vector2>();
+        playerControls = new PlayerControls();
+        velocity = GetComponent<Rigidbody>().velocity;
     }
 
-
-    void Start()
+    private void OnEnable()
     {
-        playerInputActions = new PlayerControls();
-        playerInputActions.Player.SetCallbacks(this);
-
-        playerInputActions.Player.Enable();
-
+        playerControls.Enable();
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        playerInputActions.Player.Disable();
+        playerControls.Disable();
+    }
+
+    private void FixedUpdate()
+    {
+        Vector2 move = playerControls.Player.Move.ReadValue<Vector2>();
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D))
+        {
+            GetComponent<Rigidbody>().AddForce(new Vector3(move.x * speed * Time.deltaTime, 0, move.y * speed * Time.deltaTime));
+        }
     }
 }

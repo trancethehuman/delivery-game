@@ -378,6 +378,51 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 789431184321666958, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
+        type: 3}
+      propertyPath: drag
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 789431184321666958, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
+        type: 3}
+      propertyPath: speed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 789431184321666958, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5204532784208583087, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5204532784208583087, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 3.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793956861025967945, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
+        type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793956861025967945, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793956861025967945, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: 5541ae7b-539a-4987-82c5-02d5b68f82c2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793956861025967945, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+      objectReference: {fileID: 0}
     - target: {fileID: 9197164451282902604, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
         type: 3}
       propertyPath: m_Name
@@ -390,38 +435,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9197164451282902605, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.5078068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197164451282902605, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.3297915
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197164451282902605, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.839466
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197164451282902605, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
-        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197164451282902605, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197164451282902605, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197164451282902605, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9197164451282902605, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
         type: 3}
@@ -438,7 +453,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6147535928031666670, guid: cb8978cbf734a7b4f9f1eaa9a28db11f, type: 3}
+    - {fileID: 5046218648888490317, guid: cb8978cbf734a7b4f9f1eaa9a28db11f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
