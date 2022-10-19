@@ -282,11 +282,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2594485632790843661, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5592476697020424627, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: <Player>k__BackingField
       value: 
       objectReference: {fileID: 1950718950}
+    - target: {fileID: 5592476697020424627, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: <Delivery>k__BackingField
+      value: 
+      objectReference: {fileID: 604249122306734145}
     - target: {fileID: 5592476697020424627, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: <maxVectorArea>k__BackingField.x
@@ -324,7 +334,17 @@ PrefabInstance:
       objectReference: {fileID: 359803073}
     - target: {fileID: 5592476697020424627, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
+      propertyPath: <PickupZonePrefab>k__BackingField
+      value: 
+      objectReference: {fileID: 359803073}
+    - target: {fileID: 5592476697020424627, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
       propertyPath: <DropoffZoneObject>k__BackingField
+      value: 
+      objectReference: {fileID: 1305237348}
+    - target: {fileID: 5592476697020424627, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: <DropoffZonePrefab>k__BackingField
       value: 
       objectReference: {fileID: 1305237348}
     - target: {fileID: 6123770842042141217, guid: 5da940ecfaf40714f8b29794d83ae829,
@@ -397,6 +417,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5da940ecfaf40714f8b29794d83ae829, type: 3}
+--- !u!114 &604249122306734145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2327478850723959207, guid: 5da940ecfaf40714f8b29794d83ae829,
+    type: 3}
+  m_PrefabInstance: {fileID: 604249122306734144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c706c15cacfa264495dcfadb4261839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7796193478483423556
 PrefabInstance:
   m_ObjectHideFlags: 0

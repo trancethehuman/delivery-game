@@ -8,38 +8,43 @@ public class Game : MonoBehaviour
     // [field: SerializeField] private GameObject Package { get; set; }
     [field: SerializeField] private Vector3 minVectorArea { get; set; }
     [field: SerializeField] private Vector3 maxVectorArea { get; set; }
-    [field: SerializeField] private GameObject PickupZoneObject { get; set; }
-    [field: SerializeField] private GameObject DropoffZoneObject { get; set; }
+    [field: SerializeField] private GameObject PickupZonePrefab { get; set; }
+    [field: SerializeField] private GameObject DropoffZonePrefab { get; set; }
+    [field: SerializeField] private Delivery Delivery { get; set; }
+    [field: SerializeField] private List<Job> jobs = new List<Job>();
 
     [Header("Delivery Monitoring")]
-    [field: SerializeField] private List<Job> jobs;
-    [field: SerializeField] private bool isPackagePickedUp;
-    [field: SerializeField] private float timeLimit;
     [field: SerializeField] private float elapsedTime;
     [field: SerializeField] private float eta;
     [field: SerializeField] private Vector3 pickupAt;
     [field: SerializeField] private Vector3 dropoffAt;
     [field: SerializeField] private float dropoffTimeLimit;
+    [field: SerializeField] private string currentJob;
 
-    private Delivery delivery;
 
     void Start()
     {
-        delivery = new Delivery();
-        Job newJob = delivery.GenerateAJob(minVectorArea, maxVectorArea);
-
-        pickupAt = (Vector3)(newJob?.PickupLocation);
-        dropoffAt = (Vector3)(newJob?.DropoffLocation);
-        dropoffTimeLimit = (float)(newJob?.TimeLimit);
-
-        Instantiate(PickupZoneObject, pickupAt, Quaternion.Euler(0, 0, 0)).SetActive(true);
-        Instantiate(DropoffZoneObject, dropoffAt, Quaternion.Euler(0, 0, 0)).SetActive(true);
-
-        jobs.Add(newJob);
+        DemoGameplay();
     }
 
     void Update()
     {
 
+    }
+
+    private void DemoGameplay()
+    {
+        string jobLabel = "You have to deliver this for me!";
+        Job newJob = Delivery.GenerateAJob(minVectorArea, maxVectorArea, PickupZonePrefab, DropoffZonePrefab, jobLabel);
+        jobs.Add(newJob);
+
+        pickupAt = (Vector3)(newJob?.PickupLocation);
+        dropoffAt = (Vector3)(newJob?.DropoffLocation);
+        dropoffTimeLimit = (float)(newJob?.TimeLimit);
+
+        newJob?.PickupZone?.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+
+        currentJob = newJob?.Label;
+        Delivery.PickAJob(newJob);
     }
 }

@@ -5,16 +5,12 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    [field: SerializeField] public bool hasPackage { get; private set; }
-    private Delivery delivery;
+    [field: SerializeField] public bool HasPackage { get; private set; }
 
-    private void Awake()
-    {
-        delivery = new Delivery();
-    }
+    [field: SerializeField] private Delivery Delivery { get; set; }
 
     private void OnTriggerEnter(Collider other)
     {
-        hasPackage = delivery.PickupDropoff(other.gameObject, hasPackage);
+        HasPackage = Delivery.PickedUpDropppedOff(other.gameObject, HasPackage);
     }
 }
