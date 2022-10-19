@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &359803073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2594485632790843657, guid: 5da940ecfaf40714f8b29794d83ae829,
+    type: 3}
+  m_PrefabInstance: {fileID: 604249122306734144}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1305237348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1377474076146680968, guid: 5da940ecfaf40714f8b29794d83ae829,
+    type: 3}
+  m_PrefabInstance: {fileID: 604249122306734144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1860888382
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +267,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1377474076146680968, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377474076146680972, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594485632790843657, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5592476697020424627, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: <Player>k__BackingField
@@ -290,6 +317,21 @@ PrefabInstance:
       propertyPath: <minVectorArea>k__BackingField.z
       value: -9.95
       objectReference: {fileID: 0}
+    - target: {fileID: 5592476697020424627, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: <PickupZoneObject>k__BackingField
+      value: 
+      objectReference: {fileID: 359803073}
+    - target: {fileID: 5592476697020424627, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: <DropoffZoneObject>k__BackingField
+      value: 
+      objectReference: {fileID: 1305237348}
+    - target: {fileID: 6123770842042141217, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: <hasPackage>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6932311492717902983, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: m_Name
@@ -308,7 +350,7 @@ PrefabInstance:
     - target: {fileID: 8496854059500000744, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8496854059500000744, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Delivery
@@ -13,7 +11,8 @@ public class Delivery
     {
         Vector3 pickupLocation = new Vector3(UnityEngine.Random.Range(minimumVector.x, maximumVector.x), 0, UnityEngine.Random.Range(minimumVector.z, maximumVector.z));
         Vector3 dropoffLocation = new Vector3(UnityEngine.Random.Range(minimumVector.x, maximumVector.x), 0, UnityEngine.Random.Range(minimumVector.z, maximumVector.z));
-        return new Job(pickupLocation, dropoffLocation);
+        float timeLimit = UnityEngine.Random.Range(1, 5); // To-do: Make time limit into a separate method that takes into account the delivery distance as well.
+        return new Job(pickupLocation, dropoffLocation, timeLimit);
     }
 
     public void assignJob()
@@ -26,14 +25,10 @@ public class Delivery
 
     }
 
-    public void packagePickup()
+    public bool PickupDropoff(GameObject zone, bool hasPackage)
     {
-
+        if (zone.tag == "pickupZone" && hasPackage == false) return true;
+        else if (zone.tag == "dropoffZone" && hasPackage) return false;
+        else return hasPackage;
     }
-
-    public void packageDropOff()
-    {
-
-    }
-
 }
