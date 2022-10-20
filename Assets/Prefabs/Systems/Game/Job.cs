@@ -38,7 +38,7 @@ public class Job
         if (InProgress == true)
         {
             IsCompleted = true;
-            InProgress = false;
+            JobStopStatusChange();
         }
     }
 

@@ -28,11 +28,16 @@ public class Game : MonoBehaviour
 
     void Update()
     {
+        if (CurrentJob?.InProgress == false)
+        {
+            CurrentJob = null;
+        }
 
     }
 
     private void DemoGameplay()
     {
+        // Test job
         string jobLabel = "A delivery for the bois.";
         string jobMessage = "You have to deliver this for me!";
         Job newJob = Delivery.GenerateAJob(
@@ -46,6 +51,7 @@ public class Game : MonoBehaviour
 
         jobs.Add(newJob);
 
+        // Add info to inspector
         pickupAt = (Vector3)(newJob?.PickupLocation);
         dropoffAt = (Vector3)(newJob?.DropoffLocation);
         dropoffTimeLimit = (float)(newJob?.TimeLimit);
