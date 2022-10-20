@@ -129,6 +129,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 604249122306734144}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1067374058 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5592476697020424627, guid: 5da940ecfaf40714f8b29794d83ae829,
+    type: 3}
+  m_PrefabInstance: {fileID: 604249122306734144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933745744831e0749a38e42f3ffc461a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1305237348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1377474076146680968, guid: 5da940ecfaf40714f8b29794d83ae829,
@@ -166,6 +178,11 @@ PrefabInstance:
       propertyPath: speed
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 1169882417270030073, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: <Game>k__BackingField
+      value: 
+      objectReference: {fileID: 1067374058}
     - target: {fileID: 1377474076146680968, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: m_IsActive
@@ -196,6 +213,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2819519913059216248, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: <Game>k__BackingField
+      value: 
+      objectReference: {fileID: 1067374058}
     - target: {fileID: 5592476697020424627, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: <Player>k__BackingField
@@ -325,6 +347,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931900438219465638, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

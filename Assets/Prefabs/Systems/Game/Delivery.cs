@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Delivery : MonoBehaviour
 {
-    public Job GenerateAJob(Vector3 minimumVector, Vector3 maximumVector, GameObject pickUpZonePrefab, GameObject dropoffZonePrefab, string label)
+    public Job GenerateAJob(Vector3 minimumVector, Vector3 maximumVector, GameObject pickUpZonePrefab, GameObject dropoffZonePrefab, string label, string message)
     {
         Vector3 pickupLocation = new Vector3(UnityEngine.Random.Range(minimumVector.x, maximumVector.x), 0, UnityEngine.Random.Range(minimumVector.z, maximumVector.z));
         Vector3 dropoffLocation = new Vector3(UnityEngine.Random.Range(minimumVector.x, maximumVector.x), 0, UnityEngine.Random.Range(minimumVector.z, maximumVector.z));
@@ -12,7 +12,7 @@ public class Delivery : MonoBehaviour
 
         float timeLimit = UnityEngine.Random.Range(1, 5); // To-do: Make time limit into a separate method that takes into account the delivery distance as well.
 
-        return new Job(pickupLocation, dropoffLocation, timeLimit, pickupZone, dropoffZone, label);
+        return new Job(pickupLocation, dropoffLocation, timeLimit, pickupZone, dropoffZone);
     }
 
     public GameObject GenerateZone(GameObject zonePrefab, Vector3 location)
@@ -21,25 +21,24 @@ public class Delivery : MonoBehaviour
         return Instantiate(zonePrefab, location, defaultAngle);
     }
 
-    public void PickAJob(Job job)
+    public void StartJob(Job job)
     {
+        job.JobStartStatusChange();
         job.PickupZone.SetActive(true);
         job.DropoffZone.SetActive(true);
     }
 
-    // Returns a bool when player enters a zone
-    public bool PickedUpDropppedOff(GameObject zone, bool hasPackage)
+    public void PickedUpDropppedOff(GameObject zone, Player agent, bool agentHasPackage, Job job)
     {
-        if (zone.tag == "pickupZone" && hasPackage == false)
+        if (zone.tag == "pickupZone" && agentHasPackage == false)
         {
+            agent.ChangeHasPackage(true);
             Destroy(zone);
-            return true;
         }
-        else if (zone.tag == "dropoffZone" && hasPackage)
+        else if (zone.tag == "dropoffZone" && agentHasPackage)
         {
+            job.JobFinished();
             Destroy(zone);
-            return false;
         }
-        else return hasPackage;
     }
 }

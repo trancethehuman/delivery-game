@@ -11,7 +11,7 @@ public class Game : MonoBehaviour
     [field: SerializeField] private GameObject PickupZonePrefab { get; set; }
     [field: SerializeField] private GameObject DropoffZonePrefab { get; set; }
     [field: SerializeField] private Delivery Delivery { get; set; }
-    [field: SerializeField] private Hashtable jobs = new Hashtable();
+    [field: SerializeField] private List<Job> jobs = new List<Job>();
 
     [Header("Delivery Monitoring")]
     [field: SerializeField] private float elapsedTime;
@@ -19,7 +19,7 @@ public class Game : MonoBehaviour
     [field: SerializeField] private Vector3 pickupAt;
     [field: SerializeField] private Vector3 dropoffAt;
     [field: SerializeField] private float dropoffTimeLimit;
-    [field: SerializeField] private string currentJob;
+    [field: SerializeField] public Job CurrentJob { get; private set; }
 
 
     void Start()
@@ -34,17 +34,28 @@ public class Game : MonoBehaviour
 
     private void DemoGameplay()
     {
-        string jobLabel = "You have to deliver this for me!";
-        Job newJob = Delivery.GenerateAJob(minVectorArea, maxVectorArea, PickupZonePrefab, DropoffZonePrefab, jobLabel);
+        string jobLabel = "A delivery for the bois.";
+        string jobMessage = "You have to deliver this for me!";
+        Job newJob = Delivery.GenerateAJob(
+            minVectorArea,
+            maxVectorArea,
+            PickupZonePrefab,
+            DropoffZonePrefab,
+            jobLabel,
+            jobMessage
+            );
 
-        jobs.Add(newJob.Id, newJob);
+        jobs.Add(newJob);
         Debug.Log(newJob.Id);
 
         pickupAt = (Vector3)(newJob?.PickupLocation);
         dropoffAt = (Vector3)(newJob?.DropoffLocation);
         dropoffTimeLimit = (float)(newJob?.TimeLimit);
 
-        currentJob = newJob?.Label;
-        Delivery.PickAJob(newJob);
+        // Start new job
+        Delivery.StartJob(newJob);
+        CurrentJob = newJob;
+        Debug.Log(newJob.InProgress);
+        Debug.Log(newJob.IsCompleted);
     }
 }

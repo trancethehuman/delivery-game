@@ -12,20 +12,53 @@ public class Job
     public GameObject PickupZone { get; private set; }
     public GameObject DropoffZone { get; private set; }
     public string Label { get; private set; }
+    public string Message { get; private set; }
+    public bool IsCompleted { get; private set; }
+    public bool InProgress { get; private set; }
 
-    public Job(Vector3 pickupLocation, Vector3 dropoffLocation, float timeLimit, GameObject pickupZone, GameObject dropoffZone, string label)
+    public Job(Vector3 pickupLocation, Vector3 dropoffLocation, float timeLimit, GameObject pickupZone, GameObject dropoffZone)
     {
         PickupLocation = pickupLocation;
         DropoffLocation = dropoffLocation;
         TimeLimit = timeLimit;
         PickupZone = pickupZone;
         DropoffZone = dropoffZone;
-        Label = label;
         Id = GenerateId();
+        IsCompleted = false;
+        InProgress = false;
     }
 
     private string GenerateId()
     {
         return Guid.NewGuid().ToString();
+    }
+
+    public void JobFinished()
+    {
+        if (InProgress == true)
+        {
+            IsCompleted = true;
+            InProgress = false;
+        }
+    }
+
+    public void JobStartStatusChange()
+    {
+        InProgress = true;
+    }
+
+    public void JobStopStatusChange()
+    {
+        InProgress = false;
+    }
+
+    private void AddMessage(string message)
+    {
+        Message = message;
+    }
+
+    private void AddLabel(string label)
+    {
+        Label = label;
     }
 }
