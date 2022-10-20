@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Job
 {
+    public string Id { get; private set; }
     public Vector3 PickupLocation { get; private set; }
     public Vector3 DropoffLocation { get; private set; }
     public float TimeLimit { get; private set; }
@@ -19,5 +21,11 @@ public class Job
         PickupZone = pickupZone;
         DropoffZone = dropoffZone;
         Label = label;
+        Id = GenerateId();
+    }
+
+    private string GenerateId()
+    {
+        return Guid.NewGuid().ToString();
     }
 }

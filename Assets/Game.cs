@@ -11,7 +11,7 @@ public class Game : MonoBehaviour
     [field: SerializeField] private GameObject PickupZonePrefab { get; set; }
     [field: SerializeField] private GameObject DropoffZonePrefab { get; set; }
     [field: SerializeField] private Delivery Delivery { get; set; }
-    [field: SerializeField] private List<Job> jobs = new List<Job>();
+    [field: SerializeField] private Hashtable jobs = new Hashtable();
 
     [Header("Delivery Monitoring")]
     [field: SerializeField] private float elapsedTime;
@@ -36,13 +36,13 @@ public class Game : MonoBehaviour
     {
         string jobLabel = "You have to deliver this for me!";
         Job newJob = Delivery.GenerateAJob(minVectorArea, maxVectorArea, PickupZonePrefab, DropoffZonePrefab, jobLabel);
-        jobs.Add(newJob);
+
+        jobs.Add(newJob.Id, newJob);
+        Debug.Log(newJob.Id);
 
         pickupAt = (Vector3)(newJob?.PickupLocation);
         dropoffAt = (Vector3)(newJob?.DropoffLocation);
         dropoffTimeLimit = (float)(newJob?.TimeLimit);
-
-        newJob?.PickupZone?.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
 
         currentJob = newJob?.Label;
         Delivery.PickAJob(newJob);
