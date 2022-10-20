@@ -33,6 +33,11 @@ public class Game : MonoBehaviour
             CurrentJob = null;
         }
 
+        if (CurrentJob == null)
+        {
+            DemoGameplay();
+        }
+
     }
 
     private void DemoGameplay()

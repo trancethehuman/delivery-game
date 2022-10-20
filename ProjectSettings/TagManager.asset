@@ -6,6 +6,7 @@ TagManager:
   tags:
   - pickupZone
   - dropoffZone
+  - Ground
   layers:
   - Default
   - TransparentFX
