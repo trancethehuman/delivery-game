@@ -12,6 +12,7 @@ public class Game : MonoBehaviour
     [field: SerializeField] private GameObject DropoffZonePrefab { get; set; }
     [field: SerializeField] private Delivery Delivery { get; set; }
     [field: SerializeField] private List<Job> jobs = new List<Job>();
+    [field: SerializeField] public Job CurrentJob { get; private set; }
 
     [Header("Delivery Monitoring")]
     [field: SerializeField] private float elapsedTime;
@@ -19,8 +20,6 @@ public class Game : MonoBehaviour
     [field: SerializeField] private Vector3 pickupAt;
     [field: SerializeField] private Vector3 dropoffAt;
     [field: SerializeField] private float dropoffTimeLimit;
-    [field: SerializeField] public Job CurrentJob { get; private set; }
-
 
     void Start()
     {

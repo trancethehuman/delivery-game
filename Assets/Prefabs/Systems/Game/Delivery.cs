@@ -41,6 +41,7 @@ public class Delivery : MonoBehaviour
         }
         else if (zone.tag == "dropoffZone" && agentHasPackage)
         {
+            agent.ChangeHasPackage(false);
             job.JobFinished();
             Destroy(zone);
         }
