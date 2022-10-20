@@ -46,7 +46,6 @@ public class Game : MonoBehaviour
             );
 
         jobs.Add(newJob);
-        Debug.Log(newJob.Id);
 
         pickupAt = (Vector3)(newJob?.PickupLocation);
         dropoffAt = (Vector3)(newJob?.DropoffLocation);
@@ -55,7 +54,5 @@ public class Game : MonoBehaviour
         // Start new job
         Delivery.StartJob(newJob);
         CurrentJob = newJob;
-        Debug.Log(newJob.InProgress);
-        Debug.Log(newJob.IsCompleted);
     }
 }

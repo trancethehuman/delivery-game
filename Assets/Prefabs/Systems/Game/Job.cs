@@ -52,12 +52,12 @@ public class Job
         InProgress = false;
     }
 
-    private void AddMessage(string message)
+    public void AddMessage(string message)
     {
         Message = message;
     }
 
-    private void AddLabel(string label)
+    public void AddLabel(string label)
     {
         Label = label;
     }

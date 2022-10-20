@@ -10,7 +10,7 @@ public class Zone : MonoBehaviour
         if (other.tag == "Player")
         {
             Player player = other.gameObject.GetComponent<Player>();
-            Delivery.PickedUpDropppedOff(gameObject, player, player.HasPackage, Game?.CurrentJob);
+            Delivery.OnPickupOrDropoff(gameObject, player, player.HasPackage, Game?.CurrentJob);
         }
     }
 }

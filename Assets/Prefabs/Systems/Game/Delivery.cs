@@ -12,7 +12,11 @@ public class Delivery : MonoBehaviour
 
         float timeLimit = UnityEngine.Random.Range(1, 5); // To-do: Make time limit into a separate method that takes into account the delivery distance as well.
 
-        return new Job(pickupLocation, dropoffLocation, timeLimit, pickupZone, dropoffZone);
+        Job newJob = new Job(pickupLocation, dropoffLocation, timeLimit, pickupZone, dropoffZone);
+        newJob.AddMessage(message);
+        newJob.AddLabel(label);
+
+        return newJob;
     }
 
     public GameObject GenerateZone(GameObject zonePrefab, Vector3 location)
@@ -28,7 +32,7 @@ public class Delivery : MonoBehaviour
         job.DropoffZone.SetActive(true);
     }
 
-    public void PickedUpDropppedOff(GameObject zone, Player agent, bool agentHasPackage, Job job)
+    public void OnPickupOrDropoff(GameObject zone, Player agent, bool agentHasPackage, Job job)
     {
         if (zone.tag == "pickupZone" && agentHasPackage == false)
         {
