@@ -134,7 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 250
-  <VirtualCamera>k__BackingField: {fileID: 2265651408997861213}
+  <Camera>k__BackingField: {fileID: 0}
+  <CameraRotationDegree>k__BackingField: 0
 --- !u!54 &5204532784208583087
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -282,6 +283,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 7589070742043038243, guid: bd460149484652741b2334f007d7b76c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.96328056
+      objectReference: {fileID: 0}
+    - target: {fileID: 7589070742043038243, guid: bd460149484652741b2334f007d7b76c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.26811516
+      objectReference: {fileID: 0}
+    - target: {fileID: 7589070742043038243, guid: bd460149484652741b2334f007d7b76c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.013789852
+      objectReference: {fileID: 0}
+    - target: {fileID: 7589070742043038243, guid: bd460149484652741b2334f007d7b76c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.003838205
+      objectReference: {fileID: 0}
     - target: {fileID: 7589070742043038252, guid: bd460149484652741b2334f007d7b76c,
         type: 3}
       propertyPath: m_Follow
@@ -297,12 +318,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd460149484652741b2334f007d7b76c, type: 3}
---- !u!1 &2265651408997861213 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7589070742043038248, guid: bd460149484652741b2334f007d7b76c,
-    type: 3}
-  m_PrefabInstance: {fileID: 8512082924959913333}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5109882082064363088 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3515355262379834149, guid: bd460149484652741b2334f007d7b76c,
