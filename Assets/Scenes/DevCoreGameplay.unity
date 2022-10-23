@@ -135,25 +135,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 989238444}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &116098542 stripped
+--- !u!1 &125596640 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1956723351337712634, guid: 5da940ecfaf40714f8b29794d83ae829,
     type: 3}
   m_PrefabInstance: {fileID: 604249122306734144}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &116098543 stripped
+--- !u!4 &125596641 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1956723351337712635, guid: 5da940ecfaf40714f8b29794d83ae829,
     type: 3}
   m_PrefabInstance: {fileID: 604249122306734144}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &116098548
+--- !u!114 &125596643
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116098542}
+  m_GameObject: {fileID: 125596640}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
@@ -167,16 +167,16 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.52
-  m_ScreenY: 0.49814808
-  m_CameraDistance: 2000
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_CameraDistance: 331
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 1.51
+  m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.8
-  m_BiasX: -0.173
+  m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
@@ -1742,7 +1742,7 @@ PrefabInstance:
     - target: {fileID: 1054413011595338340, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: CameraAngles.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1054413011595338340, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
@@ -1752,7 +1752,17 @@ PrefabInstance:
     - target: {fileID: 1054413011595338340, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: CameraAngles.Array.data[1]
-      value: 135
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054413011595338340, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: CameraAngles.Array.data[2]
+      value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054413011595338340, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: CameraAngles.Array.data[3]
+      value: 305
       objectReference: {fileID: 0}
     - target: {fileID: 1054413011595338340, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
@@ -1842,7 +1852,12 @@ PrefabInstance:
     - target: {fileID: 1956723350739172017, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: field of view
-      value: 1
+      value: 4.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956723350739172017, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: m_FocalLength
+      value: 1375.0638
       objectReference: {fileID: 0}
     - target: {fileID: 1956723350739172017, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
@@ -1853,6 +1868,11 @@ PrefabInstance:
         type: 3}
       propertyPath: near clip plane
       value: 3.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956723350739172017, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1956723350739172018, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
@@ -1878,11 +1898,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ComponentOwner
       value: 
-      objectReference: {fileID: 116098543}
+      objectReference: {fileID: 125596641}
     - target: {fileID: 1956723350739172019, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: m_Lens.FieldOfView
-      value: 1
+      value: 4.9
       objectReference: {fileID: 0}
     - target: {fileID: 1956723350739172019, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
@@ -1893,6 +1913,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Lens.FarClipPlane
       value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956723350739172019, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: m_Lens.ModeOverride
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1956723350739172019, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
@@ -1912,7 +1937,7 @@ PrefabInstance:
     - target: {fileID: 1956723350739172023, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: m_TagString
-      value: MainCamera
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1956723350739172028, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
@@ -1922,17 +1947,17 @@ PrefabInstance:
     - target: {fileID: 1956723350739172028, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1201.4044
+      value: -199.66888
       objectReference: {fileID: 0}
     - target: {fileID: 1956723350739172028, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1059.3812
+      value: 175.00075
       objectReference: {fileID: 0}
     - target: {fileID: 1956723350739172028, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1191.0203
+      value: -191.04028
       objectReference: {fileID: 0}
     - target: {fileID: 1956723350739172028, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
@@ -2159,6 +2184,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeliveryGame
       objectReference: {fileID: 0}
+    - target: {fileID: 8376817829645916836, guid: 5da940ecfaf40714f8b29794d83ae829,
+        type: 3}
+      propertyPath: <Player>k__BackingField
+      value: 
+      objectReference: {fileID: 1950718950}
     - target: {fileID: 8496854059500000744, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       propertyPath: m_RootOrder
@@ -2234,6 +2264,7 @@ PrefabInstance:
     - {fileID: 1956723351337712613, guid: 5da940ecfaf40714f8b29794d83ae829, type: 3}
     - {fileID: 1429753765237698060, guid: 5da940ecfaf40714f8b29794d83ae829, type: 3}
     - {fileID: 1793218930567671646, guid: 5da940ecfaf40714f8b29794d83ae829, type: 3}
+    - {fileID: 7891775385632677478, guid: 5da940ecfaf40714f8b29794d83ae829, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1956723350488336756, guid: 5da940ecfaf40714f8b29794d83ae829, type: 3}
     m_AddedGameObjects: []
@@ -2241,7 +2272,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1956723351337712634, guid: 5da940ecfaf40714f8b29794d83ae829,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 116098548}
+      addedObject: {fileID: 125596643}
   m_SourcePrefab: {fileID: 100100000, guid: 5da940ecfaf40714f8b29794d83ae829, type: 3}
 --- !u!114 &604249122306734145 stripped
 MonoBehaviour:

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class VirtualCamera : MonoBehaviour
+public class CameraSwitcher : MonoBehaviour
 {
     [field: SerializeField] private GameObject Player { get; set; }
     [field: SerializeField] private CameraRotationEvent CameraRotated { get; set; }

@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6242248968513090897}
+  - component: {fileID: 4163347744434705737}
   - component: {fileID: 6242248968513090910}
   - component: {fileID: 6242248968513090911}
   - component: {fileID: 6242248968513090908}
   - component: {fileID: 6242248968513090909}
-  - component: {fileID: 7878981802269976286}
+  - component: {fileID: 2306535969984008587}
   m_Layer: 0
   m_Name: IsometricVirtualCamera
   m_TagString: Untagged
@@ -37,6 +38,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 32, y: 45, z: 0}
+--- !u!114 &4163347744434705737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6242248968513090906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f772e6cbca6bc194b88f16bbc5b562c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Player>k__BackingField: {fileID: 0}
 --- !u!114 &6242248968513090910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +210,7 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &7878981802269976286
+--- !u!114 &2306535969984008587
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
