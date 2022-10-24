@@ -3,13 +3,13 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     [field: SerializeField] private GameObject Player { get; set; }
-    [field: SerializeField] private CameraRotationEvent CameraRotated { get; set; }
+    [field: SerializeField] private CameraAngleSwitchEvent SwitchingAngle { get; set; }
 
     private void Awake()
     {
-        CameraRotated = Player?.GetComponent<InputReader>().CameraRotated;
-        Debug.Log(CameraRotated);
-        CameraRotated.AddListener(SetCameraRotation);
+        SwitchingAngle = Player?.GetComponent<InputReader>().SwitchingAngle;
+        Debug.Log(SwitchingAngle);
+        SwitchingAngle.AddListener(SetCameraRotation);
     }
 
     private void Update()
