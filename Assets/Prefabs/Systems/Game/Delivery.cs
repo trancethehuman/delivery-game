@@ -1,34 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Delivery : MonoBehaviour
 {
-    public Job CreateJob(GameObject pickupBuilding, GameObject dropoffBuilding, GameObject pickUpZonePrefab, GameObject dropoffZonePrefab, string label, string message)
-    {
-        Vector3 pickupDoor = GetBuildingDoorPosition(pickupBuilding);
-        Vector3 dropoffDoor = GetBuildingDoorPosition(dropoffBuilding);
+    public UnityEvent DeliveryPickedUp { get; private set; }
+    public UnityEvent DeliveryDroppedoff { get; private set; }
 
-        GameObject pickupZone = GenerateZone(pickUpZonePrefab, pickupDoor);
-        GameObject dropoffZone = GenerateZone(dropoffZonePrefab, dropoffDoor);
+    public Job CreateJob(GameObject pickupDoor, GameObject dropoffDoor, string label, string message)
+    {
 
         float timeLimit = UnityEngine.Random.Range(1, 5); // To-do: Make time limit into a separate method that takes into account the delivery distance as well.
 
-        Job newJob = new(pickupDoor, dropoffDoor, timeLimit, pickupZone, dropoffZone);
+        Job newJob = new(timeLimit, pickupDoor, dropoffDoor);
         newJob.AddMessage(message);
         newJob.AddLabel(label);
 
         return newJob;
     }
 
-    public Vector3 GetBuildingDoorPosition(GameObject building)
+    public GameObject GetRandomDoor(GameObject[] doors)
     {
-        return building.transform.GetChild(0).position;
-    }
-
-    public GameObject GetRandomBuilding(GameObject[] buildings)
-    {
-        return buildings[UnityEngine.Random.Range(0, buildings.Length - 1)];
+        return doors[UnityEngine.Random.Range(0, doors.Length - 1)];
     }
 
     public GameObject GenerateZone(GameObject zonePrefab, Vector3 doorPosition)
@@ -41,22 +33,23 @@ public class Delivery : MonoBehaviour
     public void StartJob(Job job)
     {
         job.JobStartStatusChange();
-        job.PickupZone.SetActive(true);
-        job.DropoffZone.SetActive(true);
+        job.PickupDoor.GetComponent<Renderer>().material.color = Color.green;
+        job.DropoffDoor.GetComponent<Renderer>().material.color = Color.red;
     }
 
-    public void OnPickupOrDropoff(GameObject zone, Player agent, bool agentHasPackage, Job job)
+    public void OnPickupOrDropoff(GameObject door, Player player)
     {
-        if (zone.tag == "pickupZone" && agentHasPackage == false)
+        if (door.tag == "Pickup" && player.HasPackage == false)
         {
-            agent.ChangeHasPackage(true);
-            Destroy(zone);
+            player.ChangeHasPackage(true);
+            door.GetComponent<Renderer>().material.color = Color.white;
+            // DeliveryPickedUp.Invoke();
         }
-        else if (zone.tag == "dropoffZone" && agentHasPackage)
+        else if (door.tag == "Dropoff" && player.HasPackage)
         {
-            agent.ChangeHasPackage(false);
-            job.JobFinished();
-            Destroy(zone);
+            player.ChangeHasPackage(false);
+            door.GetComponent<Renderer>().material.color = Color.white;
+            // DeliveryDroppedoff.Invoke();
         }
     }
 }

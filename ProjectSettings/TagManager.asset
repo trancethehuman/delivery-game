@@ -4,11 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - pickupZone
-  - dropoffZone
   - Ground
-  - PickupBuilding
+  - Pickup
+  - Dropoff
   - DropoffBuilding
+  - dropoffZone
+  - pickupZone
   layers:
   - Default
   - TransparentFX
