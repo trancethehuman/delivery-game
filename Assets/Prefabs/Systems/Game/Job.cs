@@ -11,6 +11,8 @@ public class Job
     public float TimeLimit { get; private set; }
     public GameObject PickupZone { get; private set; }
     public GameObject DropoffZone { get; private set; }
+    public GameObject PickupBuilding { get; private set; }
+    public GameObject DropoffBuilding { get; private set; }
     public string Label { get; private set; }
     public string Message { get; private set; }
     public bool IsCompleted { get; private set; }
@@ -27,7 +29,6 @@ public class Job
         IsCompleted = false;
         InProgress = false;
     }
-
     private string GenerateId()
     {
         return Guid.NewGuid().ToString();

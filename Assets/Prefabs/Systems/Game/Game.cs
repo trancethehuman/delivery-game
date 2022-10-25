@@ -5,14 +5,13 @@ using UnityEngine;
 public class Game : MonoBehaviour
 {
     [field: SerializeField] private GameObject Player { get; set; }
-    // [field: SerializeField] private GameObject Package { get; set; }
-    [field: SerializeField] private Vector3 minVectorArea { get; set; }
-    [field: SerializeField] private Vector3 maxVectorArea { get; set; }
     [field: SerializeField] private GameObject PickupZonePrefab { get; set; }
     [field: SerializeField] private GameObject DropoffZonePrefab { get; set; }
     [field: SerializeField] private Delivery Delivery { get; set; }
     [field: SerializeField] private List<Job> jobs = new List<Job>();
     [field: SerializeField] public Job CurrentJob { get; private set; }
+    [field: SerializeField] public GameObject[] PickupBuildings { get; private set; }
+    [field: SerializeField] public GameObject[] DropoffBuildings { get; private set; }
 
     [Header("Delivery Monitoring")]
     [field: SerializeField] private float elapsedTime;
@@ -21,9 +20,16 @@ public class Game : MonoBehaviour
     [field: SerializeField] private Vector3 dropoffAt;
     [field: SerializeField] private float dropoffTimeLimit;
 
+    private void Awake()
+    {
+
+    }
+
     void Start()
     {
-        DemoGameplay();
+        PickupBuildings = GameObject.FindGameObjectsWithTag("PickupBuilding");
+        DropoffBuildings = GameObject.FindGameObjectsWithTag("DropoffBuilding");
+        DemoGameplay(PickupBuildings, DropoffBuildings);
     }
 
     void Update()
@@ -35,19 +41,22 @@ public class Game : MonoBehaviour
 
         if (CurrentJob == null)
         {
-            DemoGameplay();
+            DemoGameplay(PickupBuildings, DropoffBuildings);
         }
 
     }
 
-    private void DemoGameplay()
+    private void DemoGameplay(GameObject[] pickupBuildings, GameObject[] dropoffBuildings)
     {
         // Test job
         string jobLabel = "A delivery for the bois.";
         string jobMessage = "You have to deliver this for me!";
-        Job newJob = Delivery.GenerateAJob(
-            minVectorArea,
-            maxVectorArea,
+        GameObject pickupBuilding = Delivery.GetRandomBuilding(pickupBuildings);
+        GameObject dropoffBuilding = Delivery.GetRandomBuilding(dropoffBuildings);
+
+        Job newJob = Delivery.CreateJob(
+            pickupBuilding,
+            dropoffBuilding,
             PickupZonePrefab,
             DropoffZonePrefab,
             jobLabel,
