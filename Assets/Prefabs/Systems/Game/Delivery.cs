@@ -12,8 +12,6 @@ public class Delivery : MonoBehaviour
         GameObject pickupZone = GenerateZone(pickUpZonePrefab, pickupDoor);
         GameObject dropoffZone = GenerateZone(dropoffZonePrefab, dropoffDoor);
 
-        pickupZone.GetComponent<Renderer>().material.SetColor("Color", Color.green);
-
         float timeLimit = UnityEngine.Random.Range(1, 5); // To-do: Make time limit into a separate method that takes into account the delivery distance as well.
 
         Job newJob = new(pickupDoor, dropoffDoor, timeLimit, pickupZone, dropoffZone);
