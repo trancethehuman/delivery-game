@@ -3,8 +3,6 @@ using UnityEngine.Events;
 
 public class Delivery : MonoBehaviour
 {
-    public UnityEvent DeliveryPickedUp { get; private set; }
-    public UnityEvent DeliveryDroppedoff { get; private set; }
 
     public Job CreateJob(GameObject pickupDoor, GameObject dropoffDoor, string label, string message)
     {
@@ -35,21 +33,5 @@ public class Delivery : MonoBehaviour
         job.JobStartStatusChange();
         job.PickupDoor.GetComponent<Renderer>().material.color = Color.green;
         job.DropoffDoor.GetComponent<Renderer>().material.color = Color.red;
-    }
-
-    public void OnPickupOrDropoff(GameObject door, Player player)
-    {
-        if (door.tag == "Pickup" && player.HasPackage == false)
-        {
-            player.ChangeHasPackage(true);
-            door.GetComponent<Renderer>().material.color = Color.white;
-            // DeliveryPickedUp.Invoke();
-        }
-        else if (door.tag == "Dropoff" && player.HasPackage)
-        {
-            player.ChangeHasPackage(false);
-            door.GetComponent<Renderer>().material.color = Color.white;
-            // DeliveryDroppedoff.Invoke();
-        }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Game : MonoBehaviour
 {
@@ -20,11 +21,8 @@ public class Game : MonoBehaviour
 
     private void Awake()
     {
-        // Delivery.DeliveryPickedUp.AddListener(CurrentJob.JobStartStatusChange);
-        // Delivery.DeliveryDroppedoff.AddListener(CurrentJob.JobFinished);
-
-        // Delivery.DeliveryPickedUp.AddListener(Stuff);
-        // Delivery.DeliveryDroppedoff.AddListener(Stuff);
+        Player.GetComponent<Player>().DeliveryPickedUp.AddListener(DeliveryPickedUp);
+        Player.GetComponent<Player>().DeliveryDroppedoff.AddListener(DeliveryDroppedoff);
     }
 
     void Start()
@@ -72,8 +70,15 @@ public class Game : MonoBehaviour
         CurrentJob = newJob;
     }
 
-    private void Stuff()
+    private void DeliveryPickedUp()
     {
+        Debug.Log("Delivery Picked Up");
+        CurrentJob.JobStartStatusChange();
 
+    }
+
+    private void DeliveryDroppedoff()
+    {
+        CurrentJob.JobFinished();
     }
 }

@@ -7,7 +7,6 @@ using UnityEngine.PlayerLoop;
 public class CameraAngleSwitchEvent : UnityEvent<float>
 {
     public CameraAngleSwitchEvent() : base() { }
-
 }
 
 public class InputReader : MonoBehaviour
@@ -65,7 +64,6 @@ public class InputReader : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         Vector2 move = playerControls.Player.Move.ReadValue<Vector2>();
         GetComponent<Rigidbody>().AddForce(IsometricMovementConverter(new Vector3(move.x * speed * Time.deltaTime, 0, move.y * speed * Time.deltaTime)));
     }
