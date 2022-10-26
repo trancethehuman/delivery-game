@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
-using UnityEngine.PlayerLoop;
 
 public class CameraAngleSwitchEvent : UnityEvent<float>
 {
@@ -21,7 +19,7 @@ public class InputReader : MonoBehaviour
     private void Awake()
     {
         playerControls = new PlayerControls();
-        SetMainCameraAngle(VirtualCameras[0]);
+        SetMainCameraAngle(VirtualCameras[1]);
     }
 
     private void SwitchCameraAngle()
