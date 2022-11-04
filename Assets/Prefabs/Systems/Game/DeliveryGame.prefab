@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933745744831e0749a38e42f3ffc461a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Player>k__BackingField: {fileID: 0}
+  <Player>k__BackingField: {fileID: 8931900438219465638}
   <Delivery>k__BackingField: {fileID: 2327478850723959207}
   <PickupDoors>k__BackingField: []
   <DropoffDoors>k__BackingField: []
@@ -182,6 +182,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb8978cbf734a7b4f9f1eaa9a28db11f, type: 3}
+--- !u!1 &8931900438219465638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9197164451282902604, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,
+    type: 3}
+  m_PrefabInstance: {fileID: 312604860726607338}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8931900438219465639 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9197164451282902605, guid: cb8978cbf734a7b4f9f1eaa9a28db11f,

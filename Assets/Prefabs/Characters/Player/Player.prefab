@@ -868,11 +868,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCamera
       objectReference: {fileID: 0}
-    - target: {fileID: 5448829322323793206, guid: bd460149484652741b2334f007d7b76c,
-        type: 3}
-      propertyPath: m_DefaultBlend.m_Time
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5539857899283259253, guid: bd460149484652741b2334f007d7b76c,
         type: 3}
       propertyPath: field of view
